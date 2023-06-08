@@ -55,31 +55,31 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="firstname">Firstname</label>
-                                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="firstname*" required>
+                                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="firstname*" >
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="lastname">Lastname</label>
-                                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="lastname" required>
+                                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="lastname" >
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email*" required email>
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email*"  email>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="contact no">Contact no</label>
-                                    <input type="number" class="form-control" id="contact_no" name="contact_no" placeholder="contact no*" required>
+                                    <input type="number" class="form-control" id="contact_no" name="contact_no" placeholder="contact no*" >
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea id="description" class="form-control" name="description" placeholder="description*" required></textarea>
+                                    <textarea id="description" class="form-control" name="description" placeholder="description*" ></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-12 text-center">
