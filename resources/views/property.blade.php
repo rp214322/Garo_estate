@@ -54,8 +54,8 @@
                                 <div class="item-thumb">
                                     <a href="{!! route('viewproperty',$property->slug) !!}"><img src="{!! $property->feature_image ? $property->feature_image->file_url('thumb') : asset('images/ImageNotFound.jpeg') !!}"></a>
                                 </div>
-
-                                <div class="item-entry overflow">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                <div class="item-entry overflow">                                                                                                                                                               
                                     <h5><a href="{!! route('viewproperty',$property->slug) !!}">{!! $property->title !!}</a></h5>
                                     <div class="dot-hr"></div>
                                     <span class="pull-left"><b> Area :</b> {{ $property->sq_ft }} </span>
