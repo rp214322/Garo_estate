@@ -70,6 +70,7 @@
                         jQuery('<input />').attr('type', 'hidden').attr('name', '_token').attr('value', jQuery('meta[name="csrf-token"]').attr('content')).appendTo(form);
                         jQuery('body').append(form);
                         form.submit();
+
                     }
                 });
 
