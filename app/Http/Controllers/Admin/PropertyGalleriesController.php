@@ -56,6 +56,17 @@ class PropertyGalleriesController extends Controller
      */
     public function store(Request $request,$property_id)
     {
+        // $request->validate([
+        //     'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        // ]);
+        // $filename = time().'.'.$request->file->extension();
+        // $request->file->move(public_path('file'), $filename);
+
+        //  // Store the filename in the database
+        // $file = new PropertyGallery();
+        // $file->filename = $filename;
+        // $file->save();
+        // return response()->json(['success' => 'Successfully uploaded!', 'filename' => $filename]);
         $rules = array(
             'files' => 'required',
         );
