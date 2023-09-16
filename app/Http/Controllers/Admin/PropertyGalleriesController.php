@@ -56,37 +56,37 @@ class PropertyGalleriesController extends Controller
      */
     public function store(Request $request,$property_id)
     {
-        // $request->validate([
-        //     'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        // ]);
-        // $filename = time().'.'.$request->file->extension();
-        // $request->file->move(public_path('file'), $filename);
+        $request->validate([
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+        $filename = time().'.'.$request->file->extension();
+        $request->file->move(public_path('file'), $filename);
 
-        //  // Store the filename in the database
-        // $file = new PropertyGallery();
-        // $file->filename = $filename;
-        // $file->save();
-        // return response()->json(['success' => 'Successfully uploaded!', 'filename' => $filename]);
-        $rules = array(
-            'files' => 'required',
-        );
-        $messages = [
-            'files.required' => 'Please select files.',
-        ];
-        $validator = Validator::make($request->all(), $rules, $messages);
-        if ($validator->fails())
-        {
-            return response()->json($validator->getMessageBag()->toArray(), 422);
-        }
-        // try{
-            foreach ($request->get('files') as $file) {
-                $photo=new PropertyGallery();
-                $photo->property_id = $property_id;
-                $photo->file=$file['file'];
-                $photo->file_type=$file['type'];
-                $photo->save();
-            }
-            return response()->json(['success','PropertyGallery created successfully.'], 200);
+         // Store the filename in the database
+        $file = new PropertyGallery();
+        $file->filename = $filename;
+        $file->save();
+        return response()->json(['success' => 'Successfully uploaded!', 'filename' => $filename]);
+        // $rules = array(
+        //     'files' => 'required',
+        // );
+        // $messages = [
+        //     'files.required' => 'Please select files.',
+        // ];
+        // $validator = Validator::make($request->all(), $rules, $messages);
+        // if ($validator->fails())
+        // {
+        //     return response()->json($validator->getMessageBag()->toArray(), 422);
+        // }
+        // // try{
+        //     foreach ($request->get('files') as $file) {
+        //         $photo=new PropertyGallery();
+        //         $photo->property_id = $property_id;
+        //         $photo->file=$file['file'];
+        //         $photo->file_type=$file['type'];
+        //         $photo->save();
+        //     }
+        //     return response()->json(['success','PropertyGallery created successfully.'], 200);
         // }
         // catch(\Exception $e)
         // {
