@@ -4,8 +4,8 @@
             <div class="col-md-5 col-sm-8  col-xs-12">
                 <div class="header-half header-call">
                     <p>
-                        <span><i class="pe-7s-call"></i> +1 234 567 7890</span>
-                        <span><i class="pe-7s-mail"></i> garoestate043@gmail.com</span>
+                        <span><i class="pe-7s-call"></i> +91 908 967 5906</span>
+                        <span><i class="pe-7s-mail"></i> garoestate@gmail.com</span>
                     </p>
                 </div>
             </div>
@@ -14,10 +14,10 @@
                     <ul class="list-inline">
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-vine"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+
                     </ul>
                 </div>
             </div>
@@ -61,6 +61,7 @@
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="{{ route('home') }}">Home</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="{{ route('property') }}">Property</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="{{ route('contact') }}">Contact</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="#">About</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
