@@ -63,9 +63,9 @@
 
                                 <div class="col-sm-4">
                                     <label for="price-range">Price range (₹):</label>
-                                    <input type="text" class="span2" name="price" value="" data-slider-min="0"
-                                        data-slider-max="100000000" data-slider-step="500000"
-                                        data-slider-value="[5000000,100000000]" id="price-range"><br />
+                                    <input type="text" class="span2" name="price" value=""
+                                        data-slider-min="100000" data-slider-max="100000000" data-slider-step="500000"
+                                        data-slider-value="[5000000,50000000]" id="price-range"><br />
                                     <b class="pull-left color">100000₹</b>
                                     <b class="pull-right color">100000000₹</b>
                                 </div>
@@ -76,8 +76,8 @@
 
                                 <div class="col-sm-4">
                                     <label for="price-range">BHK :</label>
-                                    <input type="text" class="span2" name="bhk" value="" data-slider-min="0"
-                                        data-slider-max="5" data-slider-step="1" data-slider-value="[1,5]"
+                                    <input type="text" class="span2" name="bhk" value="" data-slider-min="1"
+                                        data-slider-max="6" data-slider-step="1" data-slider-value="[2,5]"
                                         id="min-baths"><br />
                                     <b class="pull-left color">1</b>
                                     <b class="pull-right color">6</b>
@@ -85,11 +85,11 @@
                                 <!-- End of  -->
                                 <div class="col-sm-4">
                                     <label for="price-range">Bathrooms :</label>
-                                    <input type="text" class="span2" name="bathrooms" value="" data-slider-min="0"
-                                        data-slider-max="6" data-slider-step="1" data-slider-value="[1,6]"
+                                    <input type="text" class="span2" name="bathrooms" value="" data-slider-min="1"
+                                        data-slider-max="6" data-slider-step="1" data-slider-value="[2,5]"
                                         id="property-geo"><br />
                                     <b class="pull-left color">1</b>
-                                    <b class="pull-right color">7</b>
+                                    <b class="pull-right color">6</b>
                                 </div>
                                 <div class="col-sm-3">
 
@@ -150,12 +150,24 @@
                                         <img src="{{ asset('assets/img/icon/bed.png') }}">({{ $property->bhk }})|
                                         <img src="{{ asset('assets/img/icon/shawer.png') }}">({{ $property->bathrooms }})
                                     </div>
-                                    <a class="favouriteProperty" data-href="{!! route('favourite.property', $property->id) !!}"><i
-                                            class="fa {!! in_array($property->id, $favourite_properties) ? 'fa-heart' : 'fa-heart-o' !!}"></i></a>
+                                    @if (auth()->check())
+                                        <a class="favouriteProperty" data-href="{!! route('favourite.property', $property->id) !!}">
+                                            <i class="fa {!! in_array($property->id, $favourite_properties) ? 'fa-heart' : 'fa-heart-o' !!}"></i>
+                                        </a>
+                                    @else
+                                        <a href="{{ route('login') }}" class="favorite-button"
+                                            data-property-id="{{ $property->id }}">
+                                            <i class="fa fa-heart-o"></i>
+                                        </a>
+                                    @endif
+
                                 </div>
                             </div>
                         </div>
                     @endforeach
+
+
+
                     <div class="col-sm-6 col-md-3 p0">
                         <div class="box-tree more-proerty text-center">
                             <div class="item-tree-icon">

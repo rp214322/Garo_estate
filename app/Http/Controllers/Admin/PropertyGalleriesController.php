@@ -78,7 +78,7 @@ class PropertyGalleriesController extends Controller
         {
             return response()->json($validator->getMessageBag()->toArray(), 422);
         }
-        // try{
+        try{
             foreach ($request->get('files') as $file) {
                 $photo=new PropertyGallery();
                 $photo->property_id = $property_id;

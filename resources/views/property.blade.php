@@ -91,143 +91,44 @@
                             <h3 class="panel-title">Smart search</h3>
                         </div>
                         <div class="panel-body search-widget">
-                            <form action="" class=" form-inline">
+                            <form action="{{ route('property') }}" method="GET" class=" form-inline">
                                 <fieldset>
                                     <div class="row">
-                                        <div class="col-xs-12">
+                                        <div class="col-xs-6">
                                             <input type="text" class="form-control" placeholder="Key word">
                                         </div>
+                                        <div class="col-xs-6">
+
+                                            <select id="lunchBegins" class="selectpicker" data-live-search-style="begins" title="Select Category">
+
+                                                @foreach (App\Models\Category::pluck('name', 'id')->toArray() as $id => $name)
+                                                <option value="{!! $id !!}">{!! $name !!}</option>
+                                            @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                 </fieldset>
 
                                 <fieldset>
                                     <div class="row">
+
                                         <div class="col-xs-6">
 
-                                            <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Your City">
+                                            <select id="lunchBegins" class="selectpicker" data-live-search-style="begins" title="Select Sub Category">
 
-                                                <option>New york, CA</option>
-                                                <option>Paris</option>
-                                                <option>Casablanca</option>
-                                                <option>Tokyo</option>
-                                                <option>Marraekch</option>
-                                                <option>kyoto , shibua</option>
+                                                {{-- @foreach (App\Models\Category::pluck('name', 'id')->toArray() as $id => $name)
+                                                <option value="{!! $id !!}">{!! $name !!}</option>
+                                            @endforeach --}}
                                             </select>
                                         </div>
                                         <div class="col-xs-6">
 
-                                            <select id="basic" class="selectpicker show-tick form-control">
-                                                <option> -Status- </option>
-                                                <option>Rent </option>
-                                                <option>Boy</option>
-                                                <option>used</option>
+                                            <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Area">
 
+                                                @foreach (App\Models\Area::pluck('area', 'id')->toArray() as $id => $area)
+                                        <option value="{!! $id !!}">{!! $area !!}</option>
+                                    @endforeach
                                             </select>
-                                        </div>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="padding-5">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <label for="price-range">Price range ($):</label>
-                                            <input type="text" class="span2" value="" data-slider-min="0"
-                                                   data-slider-max="600" data-slider-step="5"
-                                                   data-slider-value="[0,450]" id="price-range" ><br />
-                                            <b class="pull-left color">2000$</b>
-                                            <b class="pull-right color">100000$</b>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <label for="property-geo">Property geo (m2) :</label>
-                                            <input type="text" class="span2" value="" data-slider-min="0"
-                                                   data-slider-max="600" data-slider-step="5"
-                                                   data-slider-value="[50,450]" id="property-geo" ><br />
-                                            <b class="pull-left color">40m</b>
-                                            <b class="pull-right color">12000m</b>
-                                        </div>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="padding-5">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <label for="price-range">Min baths :</label>
-                                            <input type="text" class="span2" value="" data-slider-min="0"
-                                                   data-slider-max="600" data-slider-step="5"
-                                                   data-slider-value="[250,450]" id="min-baths" ><br />
-                                            <b class="pull-left color">1</b>
-                                            <b class="pull-right color">120</b>
-                                        </div>
-
-                                        <div class="col-xs-6">
-                                            <label for="property-geo">Min bed :</label>
-                                            <input type="text" class="span2" value="" data-slider-min="0"
-                                                   data-slider-max="600" data-slider-step="5"
-                                                   data-slider-value="[250,450]" id="min-bed" ><br />
-                                            <b class="pull-left color">1</b>
-                                            <b class="pull-right color">120</b>
-
-                                        </div>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="padding-5">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <div class="checkbox">
-                                                <label> <input type="checkbox" checked> Fire Place</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-6">
-                                            <div class="checkbox">
-                                                <label> <input type="checkbox"> Dual Sinks</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="padding-5">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <div class="checkbox">
-                                                <label> <input type="checkbox" checked> Swimming Pool</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <div class="checkbox">
-                                                <label> <input type="checkbox" checked> 2 Stories </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="padding-5">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <div class="checkbox">
-                                                <label><input type="checkbox"> Laundry Room </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <div class="checkbox">
-                                                <label> <input type="checkbox"> Emergency Exit</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="padding-5">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <div class="checkbox">
-                                                <label>  <input type="checkbox" checked> Jog Path </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <div class="checkbox">
-                                                <label>  <input type="checkbox"> 26' Ceilings </label>
-                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -235,13 +136,51 @@
                                 <fieldset class="padding-5">
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="checkbox">
-                                                <label>  <input type="checkbox"> Hurricane Shutters </label>
-                                            </div>
+                                            <label for="price-range">Price range (₹):</label>
+                                            <input type="text" class="span2" value="" data-slider-min="100000"
+                                                   data-slider-max="100000000" data-slider-step="500000"
+                                                   data-slider-value="[5000000,50000000]" id="price-range" ><br />
+                                            <b class="pull-left color">100000₹</b>
+                                            <b class="pull-right color">100000000₹</b>
                                         </div>
                                     </div>
                                 </fieldset>
 
+                                <fieldset class="padding-5">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label for="price-range">BHK :</label>
+                                            <input type="text" class="span2" value="" data-slider-min="1"
+                                                   data-slider-max="6" data-slider-step="1"
+                                                   data-slider-value="[2,5]" id="min-baths" ><br />
+                                            <b class="pull-left color">1</b>
+                                            <b class="pull-right color">6</b>
+                                        </div>
+
+                                        <div class="col-xs-6">
+                                            <label for="property-geo">Bathroom :</label>
+                                            <input type="text" class="span2" value="" data-slider-min="1"
+                                                   data-slider-max="6" data-slider-step="1"
+                                                   data-slider-value="[2,5]" id="min-bed" ><br />
+                                            <b class="pull-left color">1</b>
+                                            <b class="pull-right color">6</b>
+
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="padding-5">
+                                    <div class="row">
+                                        @foreach (App\Models\Amenity::pluck('name', 'id')->toArray() as $id => $name)
+                                        <div class="col-xs-6">
+                                            <div class="checkbox">
+                                                <label> <input type="checkbox" name="amenities[]" value="{{ $id }}">
+                                                    {{ $name }}</label>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </fieldset>
                                 <fieldset >
                                     <div class="row">
                                         <div class="col-xs-12">
