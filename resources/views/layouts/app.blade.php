@@ -59,6 +59,7 @@
 
         <script src="{{ asset('assets/js/main.js') }}"></script>
         <script src="{{ asset('js/jquery.star-rating-svg.js') }}"></script>
+        <script src="{{ asset('js/footer.js') }}"></script>
         <script>
             jQuery(document).ready(function() {
                 jQuery(document).on("click", "[data-confirm]", function(e) {
